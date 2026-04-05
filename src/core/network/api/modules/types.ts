@@ -35,7 +35,9 @@ import type {
   GetMessagesDTO, GetMessagesResponse,
   SendMessageDTO, SendMessageResponse,
 } from './messages/types';
-import type { GetUpdatesDTO, GetUpdatesResponse } from './subscriptions/types';
+import type {
+  CreateSubscriptionDTO, CreateSubscriptionResponse, GetUpdatesDTO, GetUpdatesResponse,
+} from './subscriptions/types';
 import { GetUploadUrlResponse, GetUploadUrlDTO } from './uploads/types';
 
 export * from './bots/types';
@@ -111,6 +113,10 @@ export type ApiMethods = {
     answers: {
       req: AnswerOnCallbackDTO,
       res: AnswerOnCallbackResponse,
+    },
+    subscriptions: {
+      req: CreateSubscriptionDTO,
+      res: CreateSubscriptionResponse,
     }
   },
   PATCH: {

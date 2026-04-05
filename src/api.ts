@@ -13,7 +13,7 @@ import type {
 import { GetMessagesExtra, RawApi, SenderAction } from './core/network/api';
 
 import type {
-  AnswerOnCallbackExtra, Client, DeleteMessageExtra,
+  AnswerOnCallbackExtra, Client, CreateSubscriptionDTO, DeleteMessageExtra,
   EditMessageExtra, SendMessageExtra, BotCommand,
   EditMyInfoDTO, FlattenReq, GetUpdatesDTO, UpdateType,
 } from './core/network/api';
@@ -166,6 +166,10 @@ export class Api {
       types: Array.isArray(types) ? types.join(',') : types,
       ...extra,
     });
+  };
+
+  setWebhook = async (extra: FlattenReq<CreateSubscriptionDTO>) => {
+    return this.raw.subscriptions.create(extra);
   };
 
   getPinnedMessage = async (chatId: number) => {

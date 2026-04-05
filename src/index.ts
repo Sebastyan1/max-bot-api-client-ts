@@ -1,5 +1,14 @@
 export { Api } from './api';
 export { Bot } from './bot';
+export type {
+  LaunchOptions, WebhookListenOptions, WebhookOptions,
+} from './bot';
+export { startMaxWebhookServer } from './webhook-server';
+export type { WebhookServerOptions } from './webhook-server';
+export {
+  MAX_WEBHOOK_SECRET_HEADER,
+  verifyMaxWebhookSecret,
+} from './webhook';
 export { Composer } from './composer';
 export { Context } from './context';
 export type { FilteredContext } from './context';
