@@ -32,7 +32,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepack": "yarn build",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
     "lint": "eslint ./src --ext ts --report-unused-disable-directives"
   },
   "devDependencies": {
